@@ -1,0 +1,520 @@
+{
+	"info": {
+		"_postman_id": "b8fce194-bdf8-46f4-a4f2-91c993799ad3",
+		"name": "HSO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"V-Con\",\n    \"description\": \"For all you connectivity needs\",\n    \"type\": 1,\n    \"rental_price\": \"11.16\",\n    \"term\": 12,\n    \"install\": true\n}"
+						},
+						"url": {
+							"raw": "localhost:10000/api/products",
+							"host": [
+								"localhost"
+							],
+							"port": "10000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single  Product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:10000/api/products/1/edit",
+							"host": [
+								"localhost"
+							],
+							"port": "10000",
+							"path": [
+								"api",
+								"products",
+								"1",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"name\": \"V-Con\",\n        \"description\" : \"For all you connectivity needs\",\n        \"type\" : 1\n    }\n]"
+						},
+						"url": {
+							"raw": "localhost:10000/api/products/1",
+							"host": [
+								"localhost"
+							],
+							"port": "10000",
+							"path": [
+								"api",
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"name\": \"V-Con\",\n        \"description\" : \"For all you connectivity needs\",\n        \"type\" : 1\n    }\n]"
+						},
+						"url": {
+							"raw": "localhost:10000/api/products/1/edit",
+							"host": [
+								"localhost"
+							],
+							"port": "10000",
+							"path": [
+								"api",
+								"products",
+								"1",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "customer_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "item[test]",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "item[V-Con]",
+									"value": "V-Con",
+									"type": "text"
+								},
+								{
+									"key": "item[V-Con][qty]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "item[test][qty]",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:10000/api/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "10000",
+							"path": [
+								"api",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "customer_id",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"status\": 1,\n        \"customer_id\" : 1\n    }\n]"
+						},
+						"url": {
+							"raw": "localhost:10000/api/orders/5",
+							"host": [
+								"localhost"
+							],
+							"port": "10000",
+							"path": [
+								"api",
+								"orders",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"status\": 1,\n        \"customer_id\" : 1\n    }\n]"
+								},
+								"url": {
+									"raw": "localhost:10000/api/orders/5",
+									"host": [
+										"localhost"
+									],
+									"port": "10000",
+									"path": [
+										"api",
+										"orders",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.19.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Jun 2021 15:41:41 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 5,\n        \"status\": 1,\n        \"customer_id\": 1,\n        \"created_at\": \"2021-06-30T15:19:55.000000Z\",\n        \"updated_at\": \"2021-06-30T15:19:55.000000Z\",\n        \"orders\": [\n            {\n                \"id\": 3,\n                \"quantity\": 2,\n                \"price\": \"11.00\",\n                \"order_id\": 5,\n                \"product_id\": 1,\n                \"created_at\": \"2021-06-30T15:19:55.000000Z\",\n                \"updated_at\": null\n            },\n            {\n                \"id\": 4,\n                \"quantity\": 1,\n                \"price\": \"11.00\",\n                \"order_id\": 5,\n                \"product_id\": 2,\n                \"created_at\": \"2021-06-30T15:19:55.000000Z\",\n                \"updated_at\": null\n            }\n        ],\n        \"product\": [\n            {\n                \"id\": 1,\n                \"name\": \"V-Con\",\n                \"type\": 1,\n                \"description\": \"For all you connectivity needs\",\n                \"rental_price\": \"11.16\",\n                \"term\": 12,\n                \"install\": 1,\n                \"created_at\": \"2021-06-30T15:13:13.000000Z\",\n                \"updated_at\": \"2021-06-30T15:13:13.000000Z\",\n                \"laravel_through_key\": 5\n            },\n            {\n                \"id\": 2,\n                \"name\": \"V-Secure\",\n                \"type\": 2,\n                \"description\": \"For all you security needs\",\n                \"rental_price\": \"11.16\",\n                \"term\": 6,\n                \"install\": 1,\n                \"created_at\": \"2021-06-30T15:14:07.000000Z\",\n                \"updated_at\": \"2021-06-30T15:14:07.000000Z\",\n                \"laravel_through_key\": 5\n            }\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:10000/api/orderitems/8",
+							"host": [
+								"localhost"
+							],
+							"port": "10000",
+							"path": [
+								"api",
+								"orderitems",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orderItems",
+			"item": [
+				{
+					"name": "Get all order items",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"status\": 1,\n        \"customer_id\" : 1\n    }\n]"
+						},
+						"url": {
+							"raw": "localhost:10000/api/orderitems",
+							"host": [
+								"localhost"
+							],
+							"port": "10000",
+							"path": [
+								"api",
+								"orderitems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Order Items",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"quantity\": 1,\n        \"price\": 26.70,\n        \"order_id\": 1,\n        \"product_id\": 1\n    }\n]"
+						},
+						"url": {
+							"raw": "localhost:10000/api/orderitems",
+							"host": [
+								"localhost"
+							],
+							"port": "10000",
+							"path": [
+								"api",
+								"orderitems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Order Item",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"quantity\": 1,\n        \"price\": 26.70,\n        \"order_id\": 1,\n        \"product_id\": 1\n    }\n]"
+						},
+						"url": {
+							"raw": "localhost:10000/api/orderitems/1",
+							"host": [
+								"localhost"
+							],
+							"port": "10000",
+							"path": [
+								"api",
+								"orderitems",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Order Item",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"quantity\": 1,\n        \"price\": 26.70,\n        \"order_id\": 1,\n        \"product_id\": 1\n    }\n]"
+						},
+						"url": {
+							"raw": "localhost:10000/api/orderitems/1/edit",
+							"host": [
+								"localhost"
+							],
+							"port": "10000",
+							"path": [
+								"api",
+								"orderitems",
+								"1",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Order Item",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"quantity\": 1,\n        \"price\": 26.70,\n        \"order_id\": 1,\n        \"product_id\": 1\n    }\n]"
+						},
+						"url": {
+							"raw": "localhost:10000/api/orderitems/1",
+							"host": [
+								"localhost"
+							],
+							"port": "10000",
+							"path": [
+								"api",
+								"orderitems",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
